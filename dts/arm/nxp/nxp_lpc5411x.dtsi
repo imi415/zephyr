@@ -1,0 +1,7 @@
+#include <nxp/nxp_lpc54xxx.dtsi>
+
+/ {
+	soc {
+		/delete-node/ usbhs@94000;
+	};
+};

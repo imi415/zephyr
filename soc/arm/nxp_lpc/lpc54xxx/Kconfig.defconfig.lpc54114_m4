@@ -8,4 +8,8 @@ if SOC_LPC54114_M4
 config SOC
 	default "lpc54114"
 
+choice USB_MCUX_CONTROLLER_TYPE
+	default USB_DC_NXP_LPCIP3511
+endchoice
+
 endif # SOC_LPC54114_M4

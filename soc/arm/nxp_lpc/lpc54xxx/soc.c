@@ -94,6 +94,15 @@ static ALWAYS_INLINE void clock_init(void)
 	RESET_PeripheralReset(kFC5_RST_SHIFT_RSTn);
 #endif
 
+#if CONFIG_USB_DC_NXP_LPCIP3511
+
+#if DT_NODE_HAS_COMPAT_STATUS(DT_NODELABEL(usbfs), nxp_mcux_usbd, okay)
+	POWER_DisablePD(kPDRUNCFG_PD_USB0_PHY);
+	CLOCK_EnableUsbfs0Clock(kCLOCK_UsbSrcFro, CLOCK_GetFreq(kCLOCK_FroHf));
+#endif
+
+#endif /* CONFIG_USB_DC_NXP_LPCIP3511 */
+
 #endif /* CONFIG_SOC_LPC54114_M4 */
 }
 

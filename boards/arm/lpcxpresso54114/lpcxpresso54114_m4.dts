@@ -6,7 +6,7 @@
 
 /dts-v1/;
 
-#include <nxp/nxp_lpc54xxx_m4.dtsi>
+#include <nxp/nxp_lpc5411x_m4.dtsi>
 #include "lpcxpresso54114.dtsi"
 
 / {
@@ -105,4 +105,10 @@
 			reg = <0x00030000 DT_SIZE_K(64)>;
 		};
 	};
+};
+
+zephyr_udc0: &usbfs {
+	status = "okay";
+	pinctrl-0 = <&pinmux_usbfs>;
+	pinctrl-names = "default";
 };

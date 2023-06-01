@@ -39,4 +39,10 @@
 		};
 	};
 
+	pinmux_usbfs: pinmux_usbfs {
+		group0 {
+			pinmux = <USB0_VBUS_PIO1_6>;
+			slew-rate = "standard";
+		};
+	};
 };
